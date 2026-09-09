@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+import joblib
 df=sns.load_dataset("titanic")
 
 df.head()
@@ -247,3 +247,11 @@ print("recall\t\t",recallscore,"\t\t",recallscore2,"\t\t",knnrecall );
 
 
 """# KNN is giving best **results**"""
+
+#exporting all model 
+
+joblib.dump(model,"LRmodel.pkl")
+
+joblib.dump(model2,"DCmodel.pkl")
+
+joblib.dump(modelknn,"KNNmodel.pkl")
